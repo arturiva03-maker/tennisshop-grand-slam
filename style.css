@@ -427,6 +427,102 @@ body {
   color: #d41876;
 }
 
+/* Service Section */
+.service-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.service-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.service-text strong {
+  color: #d41876;
+}
+
+/* Players Section */
+.players-section {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+  padding: 4rem 2rem;
+}
+
+.players-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #d41876;
+}
+
+.players-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.player-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.player-card h3 {
+  font-size: 1.3rem;
+  color: #d41876;
+  margin-bottom: 1rem;
+}
+
+.player-card ul {
+  list-style: none;
+}
+
+.player-card li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding: 0.4rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.player-card li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #d41876;
+}
+
+@media (max-width: 768px) {
+  .service-container {
+    grid-template-columns: 1fr;
+  }
+
+  .players-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .team-gallery {
     grid-template-columns: repeat(2, 1fr);
