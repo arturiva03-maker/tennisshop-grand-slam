@@ -8,6 +8,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         ueberuns: resolve(__dirname, 'ueber-uns.html'),
         racketservice: resolve(__dirname, 'racket-service.html'),
+        tennisequipment: resolve(__dirname, 'tennisequipment.html'),
       },
     },
   },
