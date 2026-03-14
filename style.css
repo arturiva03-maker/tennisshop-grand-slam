@@ -5,12 +5,12 @@
 }
 
 :root {
-  --primary: #4a4543;
-  --primary-light: #5a5553;
-  --accent: #f5e6d3;
-  --dark: #2d2926;
-  --light: #faf8f5;
-  --gray: #8a8280;
+  --primary: #1a2a4a;
+  --primary-light: #2a3a5a;
+  --accent: #ffffff;
+  --dark: #0f1a2e;
+  --light: #ffffff;
+  --gray: #7a8a9a;
 }
 
 body {
@@ -119,9 +119,9 @@ body {
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(45, 41, 38, 0.8) 0%,
-    rgba(45, 41, 38, 0.6) 50%,
-    rgba(45, 41, 38, 0.85) 100%
+    rgba(15, 26, 46, 0.85) 0%,
+    rgba(15, 26, 46, 0.6) 50%,
+    rgba(15, 26, 46, 0.9) 100%
   );
 }
 
@@ -179,7 +179,7 @@ body {
 /* Welcome Section */
 .welcome {
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, #2d2926 0%, #3a3633 100%);
+  background: linear-gradient(135deg, #0f1a2e 0%, #1a2a4a 100%);
 }
 
 .welcome-container {
@@ -286,7 +286,7 @@ body {
 }
 
 .sidebar-content {
-  background: linear-gradient(135deg, #4a4543 0%, #2d2926 100%);
+  background: linear-gradient(135deg, #1a2a4a 0%, #0f1a2e 100%);
   padding: 1.5rem;
   border-radius: 12px 0 0 12px;
   box-shadow: -5px 0 30px rgba(0, 0, 0, 0.4);
