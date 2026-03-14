@@ -353,9 +353,26 @@ body {
 }
 
 .page-hero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-  padding: 4rem 2rem;
+  position: relative;
+  padding: 6rem 2rem;
   text-align: center;
+  background: url('/hero.jpg') center/cover no-repeat;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(15, 26, 46, 0.9) 0%, rgba(15, 26, 46, 0.8) 100%);
+}
+
+.page-hero h1,
+.page-hero p {
+  position: relative;
+  z-index: 1;
 }
 
 .page-hero h1 {
@@ -549,8 +566,8 @@ body {
   right: 100%;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 120px;
+  width: 40px;
+  height: 100px;
   background: #d41876;
   border-radius: 12px 0 0 12px;
   cursor: pointer;
