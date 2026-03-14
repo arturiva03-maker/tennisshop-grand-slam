@@ -5,12 +5,12 @@
 }
 
 :root {
-  --primary: #2a2a2a;
-  --primary-light: #3a3a3a;
-  --accent: #ffffff;
-  --dark: #1a1a1a;
-  --light: #ffffff;
-  --gray: #888888;
+  --primary: #4a4543;
+  --primary-light: #5a5553;
+  --accent: #f5e6d3;
+  --dark: #2d2926;
+  --light: #faf8f5;
+  --gray: #8a8280;
 }
 
 body {
@@ -119,9 +119,9 @@ body {
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(26, 26, 26, 0.75) 0%,
-    rgba(26, 26, 26, 0.6) 50%,
-    rgba(26, 26, 26, 0.85) 100%
+    rgba(45, 41, 38, 0.8) 0%,
+    rgba(45, 41, 38, 0.6) 50%,
+    rgba(45, 41, 38, 0.85) 100%
   );
 }
 
@@ -171,7 +171,7 @@ body {
 }
 
 .btn:hover {
-  background: var(--light);
+  background: var(--accent);
   color: var(--dark);
   transform: translateY(-3px);
 }
@@ -179,7 +179,7 @@ body {
 /* Welcome Section */
 .welcome {
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #2d2926 0%, #3a3633 100%);
 }
 
 .welcome-container {
@@ -286,7 +286,7 @@ body {
 }
 
 .sidebar-content {
-  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #4a4543 0%, #2d2926 100%);
   padding: 1.5rem;
   border-radius: 12px 0 0 12px;
   box-shadow: -5px 0 30px rgba(0, 0, 0, 0.4);
