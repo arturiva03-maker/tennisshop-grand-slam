@@ -378,37 +378,29 @@ body {
   padding: 4rem 2rem;
 }
 
-.team-member {
+.team-gallery {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 3rem;
-  align-items: center;
-  margin-bottom: 5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
 }
 
-.team-member.reverse {
-  grid-template-columns: 1.5fr 1fr;
-}
-
-.team-member.reverse .member-images {
-  order: 2;
-}
-
-.team-member.reverse .member-info {
-  order: 1;
-}
-
-.member-images {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.member-images img {
+.team-gallery img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.team-gallery img:hover {
+  transform: scale(1.03);
+}
+
+.team-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
 }
 
 .member-info h2 {
@@ -436,18 +428,14 @@ body {
 }
 
 @media (max-width: 768px) {
-  .team-member,
-  .team-member.reverse {
-    grid-template-columns: 1fr;
+  .team-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
-  .team-member.reverse .member-images,
-  .team-member.reverse .member-info {
-    order: unset;
-  }
-
-  .member-images {
+  .team-text {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
 }
 
