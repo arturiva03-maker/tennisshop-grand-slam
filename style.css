@@ -5,9 +5,10 @@
 }
 
 :root {
-  --primary: #1a5f2a;
-  --primary-light: #2d8f42;
-  --accent: #f4d03f;
+  --primary: #d41876;
+  --primary-light: #e91e8c;
+  --primary-dark: #a01259;
+  --accent: #d41876;
   --dark: #1a1a1a;
   --light: #ffffff;
 }
@@ -118,7 +119,7 @@ body {
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(26, 95, 42, 0.85) 0%,
+    rgba(212, 24, 118, 0.8) 0%,
     rgba(26, 26, 26, 0.7) 50%,
     rgba(26, 26, 26, 0.9) 100%
   );
@@ -166,13 +167,14 @@ body {
   text-transform: uppercase;
   border-radius: 50px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(244, 208, 63, 0.3);
+  box-shadow: 0 4px 15px rgba(212, 24, 118, 0.4);
 }
 
 .btn:hover {
   background: var(--light);
+  color: var(--primary);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(244, 208, 63, 0.4);
+  box-shadow: 0 6px 20px rgba(212, 24, 118, 0.5);
 }
 
 /* Welcome Section */
@@ -285,7 +287,7 @@ body {
 }
 
 .sidebar-content {
-  background: linear-gradient(135deg, var(--primary) 0%, #0d3d15 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, #8a1050 100%);
   padding: 1.5rem;
   border-radius: 12px 0 0 12px;
   box-shadow: -5px 0 30px rgba(0, 0, 0, 0.4);
