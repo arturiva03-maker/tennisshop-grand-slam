@@ -134,12 +134,13 @@ body {
 }
 
 .hero-tagline {
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-family: 'Russo One', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.4rem);
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   color: transparent;
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 400;
   background: linear-gradient(90deg, #d41876, #e8509a, #ffffff, #e8509a, #d41876);
   background-size: 200% auto;
   background-clip: text;
