@@ -183,6 +183,77 @@ body {
   box-shadow: 0 6px 20px rgba(244, 208, 63, 0.4);
 }
 
+/* Welcome Section */
+.welcome {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+}
+
+.welcome-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.welcome-image {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-image::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: 10px;
+  bottom: 10px;
+  border: 3px solid var(--accent);
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.welcome-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.welcome-text h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.welcome-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.welcome-text p strong {
+  color: var(--accent);
+}
+
+.welcome-text .highlight {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--light);
+  margin-top: 1.5rem;
+}
+
+.welcome-text .signature {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .header {
@@ -199,5 +270,26 @@ body {
 
   .hero-content {
     padding: 1rem;
+  }
+
+  .welcome {
+    padding: 4rem 1.5rem;
+  }
+
+  .welcome-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .welcome-image::before {
+    display: none;
+  }
+
+  .welcome-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .welcome-text p {
+    font-size: 1rem;
   }
 }
