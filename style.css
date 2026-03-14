@@ -5,12 +5,12 @@
 }
 
 :root {
-  --primary: #d41876;
-  --primary-light: #e91e8c;
-  --primary-dark: #a01259;
+  --primary: #2a2a2a;
+  --primary-light: #3a3a3a;
   --accent: #d41876;
   --dark: #1a1a1a;
   --light: #ffffff;
+  --gray: #888888;
 }
 
 body {
@@ -119,9 +119,9 @@ body {
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(212, 24, 118, 0.8) 0%,
-    rgba(26, 26, 26, 0.7) 50%,
-    rgba(26, 26, 26, 0.9) 100%
+    rgba(26, 26, 26, 0.75) 0%,
+    rgba(26, 26, 26, 0.6) 50%,
+    rgba(26, 26, 26, 0.85) 100%
   );
 }
 
@@ -158,23 +158,22 @@ body {
 .btn {
   display: inline-block;
   padding: 1rem 2.5rem;
-  background: var(--accent);
-  color: var(--dark);
+  background: transparent;
+  color: var(--light);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   border-radius: 50px;
+  border: 2px solid var(--accent);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 24, 118, 0.4);
 }
 
 .btn:hover {
-  background: var(--light);
-  color: var(--primary);
+  background: var(--accent);
+  color: var(--light);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(212, 24, 118, 0.5);
 }
 
 /* Welcome Section */
@@ -287,7 +286,7 @@ body {
 }
 
 .sidebar-content {
-  background: linear-gradient(135deg, var(--primary) 0%, #8a1050 100%);
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
   padding: 1.5rem;
   border-radius: 12px 0 0 12px;
   box-shadow: -5px 0 30px rgba(0, 0, 0, 0.4);
