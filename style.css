@@ -923,11 +923,19 @@ body {
     padding: 4rem 1.5rem;
   }
 
-  /* Sidebar mobile - smaller toggle */
+  /* Sidebar mobile - move to top right */
+  .sidebar {
+    top: 80px;
+    transform: none;
+  }
+
   .sidebar-toggle {
     width: 28px;
-    height: 60px;
+    height: 50px;
     gap: 4px;
+    top: 0;
+    transform: none;
+    border-radius: 8px 0 0 8px;
   }
 
   .sidebar-toggle span {
