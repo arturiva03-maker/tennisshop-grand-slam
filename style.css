@@ -923,50 +923,69 @@ body {
     padding: 4rem 1.5rem;
   }
 
-  /* Sidebar mobile - move to top right */
+  /* Sidebar mobile - fixed top right corner */
   .sidebar {
-    top: 70px !important;
-    transform: translateY(0) !important;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    transform: none;
   }
 
   .sidebar-toggle {
-    width: 28px;
-    height: 50px;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    transform: none;
+    width: 32px;
+    height: 45px;
     gap: 4px;
-    top: 0 !important;
-    transform: translateY(0) !important;
     border-radius: 8px 0 0 8px;
   }
 
   .sidebar-toggle span {
-    width: 16px;
+    width: 18px;
     height: 2px;
   }
 
   .sidebar-content {
-    max-width: 260px;
-    padding: 1.25rem;
+    max-width: 250px;
+    padding: 1rem;
+    max-height: 80vh;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
   }
 
   .sidebar-logo img {
-    width: 90px;
+    width: 80px;
   }
 
   .sidebar-info h3 {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
 
-  .sidebar-info address,
-  .sidebar-info .contact {
+  .sidebar-info address {
     font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-info .contact {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
   }
 
   .sidebar-hours h4 {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
   }
 
   .sidebar-hours li {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0;
   }
 }
 
