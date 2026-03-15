@@ -925,10 +925,13 @@ body {
 
   /* Sidebar mobile - fixed top right corner */
   .sidebar {
-    position: fixed;
-    top: 70px;
-    right: 0;
-    transform: none;
+    position: fixed !important;
+    top: 75px !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    height: auto !important;
   }
 
   .sidebar-toggle {
