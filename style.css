@@ -780,13 +780,88 @@ body {
   font-weight: 500;
 }
 
-/* Responsive */
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 101;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: var(--light);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive - Tablet */
 @media (max-width: 768px) {
   .header {
     padding: 1rem;
   }
 
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
   .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(15, 26, 46, 0.98) 0%, rgba(26, 42, 74, 0.98) 100%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: 99;
+  }
+
+  .nav-links.active {
+    display: flex;
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1.25rem 1rem;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a::after {
     display: none;
   }
 
@@ -817,5 +892,277 @@ body {
 
   .welcome-text p {
     font-size: 1rem;
+  }
+
+  /* Banner responsive */
+  .banner-content {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .banner-title {
+    font-size: 1.3rem;
+  }
+
+  .banner-text {
+    font-size: 1rem;
+  }
+
+  /* Partners responsive */
+  .partners-container {
+    gap: 2rem;
+  }
+
+  .partner img {
+    height: 60px;
+  }
+
+  /* Page hero responsive */
+  .page-hero {
+    padding: 4rem 1.5rem;
+  }
+
+  /* Sidebar mobile adjustments */
+  .sidebar {
+    z-index: 150;
+  }
+
+  .sidebar-toggle {
+    width: 36px;
+    height: 80px;
+  }
+
+  .sidebar-content {
+    max-width: 280px;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-tagline {
+    padding: 0.5rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-tagline span {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+
+  .btn {
+    padding: 0.875rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Banner small mobile */
+  .string-go-banner {
+    padding: 1rem;
+  }
+
+  .banner-title {
+    font-size: 1.1rem;
+  }
+
+  .banner-text {
+    font-size: 0.9rem;
+  }
+
+  .banner-phone {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Welcome small mobile */
+  .welcome {
+    padding: 3rem 1rem;
+  }
+
+  .welcome-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .welcome-text p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Team gallery small mobile - single column */
+  .team-gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .team {
+    padding: 2.5rem 1rem;
+  }
+
+  .member-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .member-info p {
+    font-size: 0.95rem;
+  }
+
+  /* Equipment small mobile */
+  .equipment-list {
+    grid-template-columns: 1fr;
+  }
+
+  .equipment-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .equipment-service {
+    padding: 2rem 1.5rem;
+  }
+
+  .equipment-service h2 {
+    font-size: 1.4rem;
+  }
+
+  .equipment-service p {
+    font-size: 1rem;
+  }
+
+  /* Players section small mobile */
+  .players-section {
+    padding: 3rem 1rem;
+  }
+
+  .players-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .player-card {
+    padding: 1.5rem;
+  }
+
+  .player-card h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Service section small mobile */
+  .service-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .service-text p {
+    font-size: 1rem;
+  }
+
+  /* Page hero small mobile */
+  .page-hero {
+    padding: 3rem 1rem;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.6rem, 7vw, 2.5rem);
+  }
+
+  .page-hero p {
+    font-size: 1rem;
+  }
+
+  /* Partners small mobile */
+  .partners {
+    padding: 2rem 1rem;
+  }
+
+  .partners-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .partner img {
+    height: 50px;
+  }
+
+  /* Sidebar small mobile */
+  .sidebar-toggle {
+    width: 32px;
+    height: 70px;
+  }
+
+  .sidebar-toggle span {
+    width: 20px;
+    height: 2px;
+  }
+
+  .sidebar-content {
+    max-width: 260px;
+    padding: 1rem;
+  }
+
+  .sidebar-logo img {
+    width: 100px;
+  }
+
+  .sidebar-info h3 {
+    font-size: 1rem;
+  }
+
+  .sidebar-info address {
+    font-size: 0.85rem;
+  }
+
+  .sidebar-info .contact {
+    font-size: 0.8rem;
+  }
+
+  .sidebar-hours h4 {
+    font-size: 0.9rem;
+  }
+
+  .sidebar-hours li {
+    font-size: 0.8rem;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .nav-links a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn {
+    min-height: 48px;
+  }
+
+  .banner-phone {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .sidebar-toggle {
+    min-width: 44px;
+    min-height: 80px;
   }
 }
