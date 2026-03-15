@@ -923,10 +923,10 @@ body {
     padding: 4rem 1.5rem;
   }
 
-  /* Sidebar mobile - fixed top right corner */
+  /* Sidebar mobile - fixed right side, near top */
   .sidebar {
     position: fixed !important;
-    top: 75px !important;
+    top: 120px !important;
     right: 0 !important;
     bottom: auto !important;
     left: auto !important;
@@ -939,10 +939,10 @@ body {
     right: 100%;
     top: 0;
     transform: none;
-    width: 32px;
-    height: 45px;
-    gap: 4px;
-    border-radius: 8px 0 0 8px;
+    width: 30px;
+    height: 40px;
+    gap: 3px;
+    border-radius: 6px 0 0 6px;
   }
 
   .sidebar-toggle span {
