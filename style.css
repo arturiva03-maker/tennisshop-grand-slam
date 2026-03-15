@@ -828,6 +828,7 @@ body {
   }
 
   .nav-links {
+    display: flex !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -845,7 +846,6 @@ body {
   }
 
   .nav-links.active {
-    display: flex;
     transform: translateX(0);
   }
 
@@ -923,18 +923,9 @@ body {
     padding: 4rem 1.5rem;
   }
 
-  /* Sidebar mobile adjustments */
+  /* Sidebar - hide on mobile */
   .sidebar {
-    z-index: 150;
-  }
-
-  .sidebar-toggle {
-    width: 36px;
-    height: 80px;
-  }
-
-  .sidebar-content {
-    max-width: 280px;
+    display: none;
   }
 }
 
@@ -1100,46 +1091,6 @@ body {
   .partner img {
     height: 50px;
   }
-
-  /* Sidebar small mobile */
-  .sidebar-toggle {
-    width: 32px;
-    height: 70px;
-  }
-
-  .sidebar-toggle span {
-    width: 20px;
-    height: 2px;
-  }
-
-  .sidebar-content {
-    max-width: 260px;
-    padding: 1rem;
-  }
-
-  .sidebar-logo img {
-    width: 100px;
-  }
-
-  .sidebar-info h3 {
-    font-size: 1rem;
-  }
-
-  .sidebar-info address {
-    font-size: 0.85rem;
-  }
-
-  .sidebar-info .contact {
-    font-size: 0.8rem;
-  }
-
-  .sidebar-hours h4 {
-    font-size: 0.9rem;
-  }
-
-  .sidebar-hours li {
-    font-size: 0.8rem;
-  }
 }
 
 /* Touch-friendly improvements */
@@ -1159,10 +1110,5 @@ body {
     min-height: 48px;
     display: inline-flex;
     align-items: center;
-  }
-
-  .sidebar-toggle {
-    min-width: 44px;
-    min-height: 80px;
   }
 }
