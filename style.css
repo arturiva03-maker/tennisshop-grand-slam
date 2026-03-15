@@ -923,9 +923,42 @@ body {
     padding: 4rem 1.5rem;
   }
 
-  /* Sidebar - hide on mobile */
-  .sidebar {
-    display: none;
+  /* Sidebar mobile - smaller toggle */
+  .sidebar-toggle {
+    width: 28px;
+    height: 60px;
+    gap: 4px;
+  }
+
+  .sidebar-toggle span {
+    width: 16px;
+    height: 2px;
+  }
+
+  .sidebar-content {
+    max-width: 260px;
+    padding: 1.25rem;
+  }
+
+  .sidebar-logo img {
+    width: 90px;
+  }
+
+  .sidebar-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .sidebar-info address,
+  .sidebar-info .contact {
+    font-size: 0.8rem;
+  }
+
+  .sidebar-hours h4 {
+    font-size: 0.85rem;
+  }
+
+  .sidebar-hours li {
+    font-size: 0.75rem;
   }
 }
 
