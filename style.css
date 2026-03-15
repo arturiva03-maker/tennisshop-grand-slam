@@ -923,26 +923,38 @@ body {
     padding: 4rem 1.5rem;
   }
 
-  /* Sidebar mobile - fixed right side, near top */
+  /* Sidebar mobile - fixed right side */
   .sidebar {
     position: fixed !important;
-    top: 120px !important;
+    top: 100px !important;
     right: 0 !important;
-    bottom: auto !important;
     left: auto !important;
+    bottom: auto !important;
     transform: none !important;
-    height: auto !important;
+    width: auto !important;
+    margin: 0 !important;
   }
 
   .sidebar-toggle {
-    position: absolute;
-    right: 100%;
-    top: 0;
-    transform: none;
+    position: absolute !important;
+    right: 100% !important;
+    left: auto !important;
+    top: 0 !important;
+    bottom: auto !important;
+    transform: none !important;
     width: 30px;
     height: 40px;
     gap: 3px;
     border-radius: 6px 0 0 6px;
+    margin: 0 !important;
+  }
+
+  .sidebar-content {
+    transform: translateX(100%) !important;
+  }
+
+  .sidebar.open .sidebar-content {
+    transform: translateX(0) !important;
   }
 
   .sidebar-toggle span {
