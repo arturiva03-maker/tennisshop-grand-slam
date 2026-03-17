@@ -90,8 +90,8 @@ const initScrollReveal = () => {
   // Intersection Observer for reveal animations
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -80px 0px',
-    threshold: 0.1
+    rootMargin: '50px',
+    threshold: 0.01
   };
 
   const revealObserver = new IntersectionObserver((entries) => {
@@ -102,9 +102,15 @@ const initScrollReveal = () => {
     });
   }, observerOptions);
 
-  // Observe all reveal elements
+  // Observe all reveal elements and check if already visible
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-item').forEach(el => {
-    revealObserver.observe(el);
+    // Check if element is already in viewport
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('revealed');
+    } else {
+      revealObserver.observe(el);
+    }
   });
 };
 
