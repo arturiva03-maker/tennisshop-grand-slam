@@ -45,9 +45,69 @@ if (mobileMenuToggle && navLinks) {
   });
 }
 
-// ===== SCROLL REVEAL ANIMATIONS (disabled - causes scroll issues) =====
+// ===== SCROLL REVEAL ANIMATIONS (Desktop only) =====
 const initScrollReveal = () => {
-  // Disabled due to scroll issues on mobile
+  // Only run on desktop
+  if (window.innerWidth <= 768) return;
+
+  // Add reveal classes to elements
+  const revealElements = [
+    { selector: '.welcome-image', class: 'reveal-left' },
+    { selector: '.welcome-text', class: 'reveal-right' },
+    { selector: '.string-go-banner', class: 'reveal' },
+    { selector: '.partners', class: 'reveal' },
+    { selector: '.service-container', class: 'reveal' },
+    { selector: '.equipment-container', class: 'reveal' },
+    { selector: '.equipment-service', class: 'reveal-scale' },
+    { selector: '.players-section h2', class: 'reveal' },
+    { selector: '.team-text', class: 'reveal' },
+  ];
+
+  revealElements.forEach(({ selector, class: className }) => {
+    document.querySelectorAll(selector).forEach(el => {
+      if (!el.classList.contains('reveal') &&
+          !el.classList.contains('reveal-left') &&
+          !el.classList.contains('reveal-right') &&
+          !el.classList.contains('reveal-scale')) {
+        el.classList.add(className);
+      }
+    });
+  });
+
+  // Add stagger animation to grid items
+  const staggerContainers = [
+    '.team-gallery img',
+    '.players-grid .player-card-flip',
+    '.partners-container .partner',
+    '.equipment-list li'
+  ];
+
+  staggerContainers.forEach(selector => {
+    document.querySelectorAll(selector).forEach((el, index) => {
+      el.classList.add('stagger-item');
+      el.style.transitionDelay = `${index * 0.1}s`;
+    });
+  });
+
+  // Intersection Observer for reveal animations
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -80px 0px',
+    threshold: 0.1
+  };
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all reveal elements
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-item').forEach(el => {
+    revealObserver.observe(el);
+  });
 };
 
 // ===== PARALLAX EFFECT (disabled - causes scroll issues) =====
