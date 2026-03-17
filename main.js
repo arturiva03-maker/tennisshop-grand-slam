@@ -108,33 +108,9 @@ const initScrollReveal = () => {
   });
 };
 
-// ===== PARALLAX EFFECT =====
+// ===== PARALLAX EFFECT (disabled - causes scroll issues) =====
 const initParallax = () => {
-  const heroImage = document.querySelector('.hero-image');
-  if (!heroImage) return;
-
-  heroImage.classList.add('parallax');
-
-  let ticking = false;
-
-  const updateParallax = () => {
-    const scrollY = window.scrollY;
-    const heroHeight = document.querySelector('.hero')?.offsetHeight || 600;
-
-    // Only apply parallax when hero is visible
-    if (scrollY < heroHeight) {
-      const parallaxValue = scrollY * 0.4;
-      heroImage.style.transform = `translateY(${parallaxValue}px)`;
-    }
-    ticking = false;
-  };
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  }, { passive: true });
+  // Disabled due to scroll issues on mobile
 };
 
 // ===== 3D TILT EFFECT FOR CARDS =====

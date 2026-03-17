@@ -1433,14 +1433,6 @@ body {
   }
 }
 
-/* Parallax Hero */
-.hero-image {
-  transition: transform 0.1s linear;
-}
-
-.hero-image.parallax {
-  will-change: transform;
-}
 
 /* Mobile Menu Enhanced Animation - only on mobile */
 @media (max-width: 768px) {
