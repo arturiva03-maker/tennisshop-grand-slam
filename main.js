@@ -45,10 +45,8 @@ if (mobileMenuToggle && navLinks) {
   });
 }
 
-// ===== SCROLL REVEAL ANIMATIONS (Desktop only) =====
+// ===== SCROLL REVEAL ANIMATIONS =====
 const initScrollReveal = () => {
-  // Only run on desktop
-  if (window.innerWidth <= 768) return;
 
   // Add reveal classes to elements
   const revealElements = [
