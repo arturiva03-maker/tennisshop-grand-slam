@@ -1424,26 +1424,29 @@ html {
   will-change: transform;
 }
 
-/* Mobile Menu Enhanced Animation */
-.nav-links {
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-}
+/* Mobile Menu Enhanced Animation - only on mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  }
 
-.nav-links li {
-  opacity: 0;
-  transform: translateX(-30px);
-}
+  .nav-links li {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
 
-.nav-links.active li {
-  opacity: 1;
-  transform: translateX(0);
-}
+  .nav-links.active li {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
-.nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
-.nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
-.nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
-.nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
-.nav-links.active li:nth-child(5) { transition-delay: 0.3s; }
+  .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+  .nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
+  .nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
+  .nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
+  .nav-links.active li:nth-child(5) { transition-delay: 0.3s; }
+}
 
 /* Page Hero Text Animation */
 .page-hero h1 {
