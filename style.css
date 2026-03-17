@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 :root {
   --primary: #1a2a4a;
   --primary-light: #2a3a5a;
@@ -1206,24 +1210,42 @@ html {
 
 .reveal-left {
   opacity: 0;
-  transform: translateX(-60px);
+  transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .reveal-left.revealed {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .reveal-right {
   opacity: 0;
-  transform: translateX(60px);
+  transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .reveal-right.revealed {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
+}
+
+@media (min-width: 769px) {
+  .reveal-left {
+    transform: translateX(-60px);
+  }
+
+  .reveal-left.revealed {
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    transform: translateX(60px);
+  }
+
+  .reveal-right.revealed {
+    transform: translateX(0);
+  }
 }
 
 .reveal-scale {
