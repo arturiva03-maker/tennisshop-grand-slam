@@ -74,16 +74,16 @@ const initScrollReveal = () => {
 
   // Add stagger animation to grid items
   const staggerContainers = [
-    '.team-gallery img',
-    '.players-grid .player-card-flip',
-    '.partners-container .partner',
-    '.equipment-list li'
+    { selector: '.team-gallery img', delay: 0.1 },
+    { selector: '.players-grid .player-card-flip', delay: 0.15 },
+    { selector: '.partners-container .partner', delay: 0.05 },
+    { selector: '.equipment-list li', delay: 0.05 }
   ];
 
-  staggerContainers.forEach(selector => {
+  staggerContainers.forEach(({ selector, delay }) => {
     document.querySelectorAll(selector).forEach((el, index) => {
       el.classList.add('stagger-item');
-      el.style.transitionDelay = `${index * 0.1}s`;
+      el.style.transitionDelay = `${index * delay}s`;
     });
   });
 
