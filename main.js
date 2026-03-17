@@ -110,9 +110,37 @@ const initScrollReveal = () => {
   });
 };
 
-// ===== PARALLAX EFFECT (disabled - causes scroll issues) =====
+// ===== PARALLAX EFFECT (Desktop only) =====
 const initParallax = () => {
-  // Disabled due to scroll issues on mobile
+  // Only run on desktop
+  if (window.innerWidth <= 768) return;
+
+  const heroImage = document.querySelector('.hero-image');
+  if (!heroImage) return;
+
+  let ticking = false;
+
+  const updateParallax = () => {
+    const scrollY = window.scrollY;
+    const heroHeight = document.querySelector('.hero')?.offsetHeight || 600;
+
+    if (scrollY < heroHeight) {
+      const parallaxValue = scrollY * 0.4;
+      heroImage.style.transform = `translateY(${parallaxValue}px) scale(1.1)`;
+    }
+    ticking = false;
+  };
+
+  // Initial scale
+  heroImage.style.transform = 'scale(1.1)';
+  heroImage.style.transition = 'transform 0.1s linear';
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
 };
 
 // ===== 3D TILT EFFECT FOR CARDS =====
