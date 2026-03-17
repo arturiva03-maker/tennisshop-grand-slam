@@ -643,15 +643,15 @@ body {
 /* Sidebar */
 .sidebar {
   position: fixed;
-  left: 0;
+  left: 40px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 200;
 }
 
 .sidebar-toggle {
-  position: absolute;
-  left: 100%;
+  position: fixed;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 40px;
