@@ -180,6 +180,20 @@ const initSmoothScroll = () => {
   });
 };
 
+// ===== FLIP CARDS (Mobile tap support) =====
+const initFlipCards = () => {
+  const flipCards = document.querySelectorAll('.player-card-flip');
+
+  flipCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Only toggle on mobile/tablet
+      if (window.innerWidth <= 768) {
+        card.classList.toggle('flipped');
+      }
+    });
+  });
+};
+
 // ===== INITIALIZE ALL ANIMATIONS =====
 document.addEventListener('DOMContentLoaded', () => {
   // Check for reduced motion preference
@@ -192,4 +206,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initSmoothScroll();
+  initFlipCards();
 });
