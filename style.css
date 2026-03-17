@@ -650,8 +650,8 @@ body {
 }
 
 .sidebar-toggle {
-  position: fixed;
-  left: 0;
+  position: fixed !important;
+  left: 0 !important;
   top: 50%;
   transform: translateY(-50%);
   width: 40px;
@@ -669,6 +669,8 @@ body {
   box-shadow: 3px 0 15px rgba(212, 24, 118, 0.2);
   border: 1px solid rgba(212, 24, 118, 0.4);
   border-left: none;
+  margin: 0;
+  padding: 0;
 }
 
 .sidebar-toggle:hover {
