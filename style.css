@@ -1192,80 +1192,6 @@ body {
 /* ===== ANIMATIONS ===== */
 
 
-/* Scroll Reveal Animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal-left {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal-left.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal-right.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (min-width: 769px) {
-  .reveal-left {
-    transform: translateX(-60px);
-  }
-
-  .reveal-left.revealed {
-    transform: translateX(0);
-  }
-
-  .reveal-right {
-    transform: translateX(60px);
-  }
-
-  .reveal-right.revealed {
-    transform: translateX(0);
-  }
-}
-
-.reveal-scale {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal-scale.revealed {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Staggered animations for grids */
-.stagger-item {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.stagger-item.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* 3D Card Hover Effects */
 .card-3d {
@@ -1471,7 +1397,7 @@ body {
   animation: fadeInUp 0.8s ease 0.4s forwards;
 }
 
-/* Section Title Underline Animation */
+/* Section Title Underline */
 .players-section h2,
 .equipment-service h2 {
   position: relative;
@@ -1483,17 +1409,10 @@ body {
   content: '';
   position: absolute;
   bottom: -10px;
-  left: 50%;
-  width: 0;
+  left: calc(50% - 30px);
+  width: 60px;
   height: 3px;
   background: #d41876;
-  transition: width 0.6s ease, left 0.6s ease;
-}
-
-.players-section h2.revealed::after,
-.equipment-service h2.revealed::after {
-  width: 60px;
-  left: calc(50% - 30px);
 }
 
 /* Sidebar Enhanced Animation */
@@ -1665,14 +1584,5 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-
-  .reveal,
-  .reveal-left,
-  .reveal-right,
-  .reveal-scale,
-  .stagger-item {
-    opacity: 1;
-    transform: none;
   }
 }
