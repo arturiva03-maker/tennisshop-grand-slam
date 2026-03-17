@@ -44,3 +44,152 @@ if (mobileMenuToggle && navLinks) {
     }
   });
 }
+
+// ===== SCROLL REVEAL ANIMATIONS =====
+const initScrollReveal = () => {
+  // Add reveal classes to elements
+  const revealElements = [
+    { selector: '.welcome-image', class: 'reveal-left' },
+    { selector: '.welcome-text', class: 'reveal-right' },
+    { selector: '.string-go-banner', class: 'reveal' },
+    { selector: '.partners', class: 'reveal' },
+    { selector: '.service-container', class: 'reveal' },
+    { selector: '.equipment-container', class: 'reveal' },
+    { selector: '.equipment-service', class: 'reveal-scale' },
+    { selector: '.players-section h2', class: 'reveal' },
+    { selector: '.team-text', class: 'reveal' },
+  ];
+
+  revealElements.forEach(({ selector, class: className }) => {
+    document.querySelectorAll(selector).forEach(el => {
+      if (!el.classList.contains('reveal') &&
+          !el.classList.contains('reveal-left') &&
+          !el.classList.contains('reveal-right') &&
+          !el.classList.contains('reveal-scale')) {
+        el.classList.add(className);
+      }
+    });
+  });
+
+  // Add stagger animation to grid items
+  const staggerContainers = [
+    '.team-gallery img',
+    '.players-grid .player-card',
+    '.partners-container .partner',
+    '.equipment-list li'
+  ];
+
+  staggerContainers.forEach(selector => {
+    document.querySelectorAll(selector).forEach((el, index) => {
+      el.classList.add('stagger-item');
+      el.style.transitionDelay = `${index * 0.1}s`;
+    });
+  });
+
+  // Intersection Observer for reveal animations
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -80px 0px',
+    threshold: 0.1
+  };
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        // Don't unobserve to allow re-animation if needed
+      }
+    });
+  }, observerOptions);
+
+  // Observe all reveal elements
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-item').forEach(el => {
+    revealObserver.observe(el);
+  });
+};
+
+// ===== PARALLAX EFFECT =====
+const initParallax = () => {
+  const heroImage = document.querySelector('.hero-image');
+  if (!heroImage) return;
+
+  heroImage.classList.add('parallax');
+
+  let ticking = false;
+
+  const updateParallax = () => {
+    const scrollY = window.scrollY;
+    const heroHeight = document.querySelector('.hero')?.offsetHeight || 600;
+
+    // Only apply parallax when hero is visible
+    if (scrollY < heroHeight) {
+      const parallaxValue = scrollY * 0.4;
+      heroImage.style.transform = `translateY(${parallaxValue}px)`;
+    }
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+};
+
+// ===== 3D TILT EFFECT FOR CARDS =====
+const initTiltEffect = () => {
+  const cards = document.querySelectorAll('.player-card, .member-info');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = (y - centerY) / 20;
+      const rotateY = (centerX - x) / 20;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+    });
+  });
+};
+
+// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+const initSmoothScroll = () => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+};
+
+// ===== INITIALIZE ALL ANIMATIONS =====
+document.addEventListener('DOMContentLoaded', () => {
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    initScrollReveal();
+    initParallax();
+    initTiltEffect();
+  }
+
+  initSmoothScroll();
+});

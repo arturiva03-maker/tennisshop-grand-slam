@@ -1184,3 +1184,345 @@ body {
     align-items: center;
   }
 }
+
+/* ===== ANIMATIONS ===== */
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered animations for grids */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 3D Card Hover Effects */
+.card-3d {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Player Card Enhanced Hover */
+.player-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(212, 24, 118, 0.3);
+  border-color: rgba(212, 24, 118, 0.5);
+}
+
+.player-card h3 {
+  transition: transform 0.3s ease;
+}
+
+.player-card:hover h3 {
+  transform: translateX(5px);
+}
+
+/* Partner Logo Hover */
+.partner {
+  transition: transform 0.4s ease;
+}
+
+.partner:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* Team Gallery Image Hover */
+.team-gallery img {
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+}
+
+.team-gallery img:hover {
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 20px 40px rgba(212, 24, 118, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Member Info Card Effect */
+.member-info {
+  transition: transform 0.4s ease, background 0.4s ease;
+  padding: 2rem;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.member-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 24, 118, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.member-info:hover::before {
+  left: 100%;
+}
+
+.member-info:hover {
+  transform: translateX(10px);
+  background: rgba(212, 24, 118, 0.05);
+}
+
+/* Equipment List Item Hover */
+.equipment-list li {
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.equipment-list li:hover {
+  transform: translateX(8px);
+  background: rgba(212, 24, 118, 0.25);
+  border-color: #d41876;
+}
+
+/* Service Container Image */
+.service-image img,
+.equipment-image img {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.service-image:hover img,
+.equipment-image:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Welcome Image Enhanced */
+.welcome-image {
+  transition: transform 0.5s ease;
+}
+
+.welcome-image:hover {
+  transform: scale(1.02);
+}
+
+.welcome-image:hover img {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
+
+/* Button Pulse Animation */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Hero Content Animation */
+.hero-content h1 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+.hero-content p {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease 0.6s forwards;
+}
+
+.hero-content .btn {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease 0.9s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Parallax Hero */
+.hero-image {
+  transition: transform 0.1s linear;
+}
+
+.hero-image.parallax {
+  will-change: transform;
+}
+
+/* Mobile Menu Enhanced Animation */
+.nav-links {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+.nav-links li {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.nav-links.active li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+.nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
+.nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
+.nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
+.nav-links.active li:nth-child(5) { transition-delay: 0.3s; }
+
+/* Page Hero Text Animation */
+.page-hero h1 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.page-hero p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+/* Section Title Underline Animation */
+.players-section h2,
+.equipment-service h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.players-section h2::after,
+.equipment-service h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: #d41876;
+  transition: width 0.6s ease, left 0.6s ease;
+}
+
+.players-section h2.revealed::after,
+.equipment-service h2.revealed::after {
+  width: 60px;
+  left: calc(50% - 30px);
+}
+
+/* Sidebar Enhanced Animation */
+.sidebar-content {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar.open .sidebar-content > * {
+  animation: slideInRight 0.4s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .stagger-item {
+    opacity: 1;
+    transform: none;
+  }
+}
