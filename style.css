@@ -656,45 +656,46 @@ body {
 .sidebar-content {
   background: linear-gradient(135deg, rgba(26, 42, 74, 0.95) 0%, rgba(15, 26, 46, 0.95) 100%);
   backdrop-filter: blur(10px);
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 0 12px 12px 0;
   box-shadow: 5px 0 30px rgba(0, 0, 0, 0.4);
   max-height: 90vh;
   overflow-y: auto;
+  width: 180px;
 }
 
 .sidebar-logo {
   text-align: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .sidebar-logo img {
-  width: 120px;
+  width: 80px;
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .sidebar-info h3 {
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   color: var(--accent);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .sidebar-info address {
   font-style: normal;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
   color: rgba(255, 255, 255, 0.9);
 }
 
 .sidebar-info .contact {
-  font-size: 0.85rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -702,6 +703,7 @@ body {
   color: var(--accent);
   text-decoration: none;
   transition: color 0.3s ease;
+  word-break: break-all;
 }
 
 .sidebar-info .contact a:hover {
@@ -709,9 +711,9 @@ body {
 }
 
 .sidebar-hours h4 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--accent);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .sidebar-hours ul {
@@ -721,8 +723,8 @@ body {
 .sidebar-hours li {
   display: flex;
   justify-content: space-between;
-  font-size: 0.85rem;
-  padding: 0.4rem 0;
+  font-size: 0.7rem;
+  padding: 0.3rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
