@@ -147,28 +147,26 @@ const initParallax = () => {
   }, { passive: true });
 };
 
-// ===== 3D TILT EFFECT FOR CARDS =====
-const initTiltEffect = () => {
-  const cards = document.querySelectorAll('.player-card, .member-info');
+// ===== HEADER REVEAL ON SCROLL =====
+const initHeaderReveal = () => {
+  const header = document.querySelector('.header:not(.header-solid)');
+  if (!header) return;
 
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+  let lastScroll = 0;
 
-      const rotateX = (y - centerY) / 20;
-      const rotateY = (centerX - x) / 20;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-    });
-  });
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (scrollY > 100) {
+      header.style.background = 'rgba(6, 6, 9, 0.95)';
+      header.style.backdropFilter = 'blur(10px)';
+      header.style.borderBottom = '1px solid rgba(201, 169, 110, 0.1)';
+    } else {
+      header.style.background = 'linear-gradient(to bottom, rgba(6,6,9,0.9), transparent)';
+      header.style.backdropFilter = 'none';
+      header.style.borderBottom = 'none';
+    }
+    lastScroll = scrollY;
+  }, { passive: true });
 };
 
 // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
@@ -204,7 +202,7 @@ const initFlipCards = () => {
   });
 };
 
-// ===== INITIALIZE ALL ANIMATIONS =====
+// ===== INITIALIZE ALL =====
 document.addEventListener('DOMContentLoaded', () => {
   // Check for reduced motion preference
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -212,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!prefersReducedMotion) {
     initScrollReveal();
     initParallax();
-    initTiltEffect();
+    initHeaderReveal();
   }
 
   initSmoothScroll();
