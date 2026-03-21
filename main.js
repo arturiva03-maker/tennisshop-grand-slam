@@ -4,16 +4,37 @@
 const sidebarToggle = document.getElementById('sidebarToggle');
 const sidebar = document.querySelector('.sidebar');
 
-sidebarToggle.addEventListener('click', () => {
-  sidebar.classList.toggle('open');
-});
+if (sidebarToggle && sidebar) {
+  const toggleSidebar = () => {
+    const isOpen = sidebar.classList.toggle('open');
+    sidebarToggle.setAttribute('aria-expanded', isOpen);
+  };
 
-// Close sidebar when clicking outside
-document.addEventListener('click', (e) => {
-  if (!sidebar.contains(e.target) && sidebar.classList.contains('open')) {
-    sidebar.classList.remove('open');
-  }
-});
+  sidebarToggle.addEventListener('click', toggleSidebar);
+  sidebarToggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleSidebar();
+    }
+  });
+
+  // Close sidebar when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      sidebarToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      sidebarToggle.setAttribute('aria-expanded', 'false');
+      sidebarToggle.focus();
+    }
+  });
+}
 
 // Mobile Menu Toggle
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -152,20 +173,17 @@ const initHeaderReveal = () => {
   const header = document.querySelector('.header:not(.header-solid)');
   if (!header) return;
 
-  let lastScroll = 0;
-
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     if (scrollY > 100) {
       header.style.background = 'rgba(6, 6, 9, 0.95)';
-      header.style.backdropFilter = 'blur(10px)';
-      header.style.borderBottom = '1px solid rgba(201, 169, 110, 0.1)';
+      header.style.backdropFilter = 'blur(12px)';
+      header.style.borderBottom = '1px solid rgba(201, 169, 110, 0.08)';
     } else {
-      header.style.background = 'linear-gradient(to bottom, rgba(6,6,9,0.9), transparent)';
+      header.style.background = 'linear-gradient(to bottom, rgba(6,6,9,0.92), transparent)';
       header.style.backdropFilter = 'none';
       header.style.borderBottom = 'none';
     }
-    lastScroll = scrollY;
   }, { passive: true });
 };
 
