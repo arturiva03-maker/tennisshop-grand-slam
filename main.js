@@ -79,7 +79,8 @@ const initScrollReveal = () => {
     { selector: '.equipment-container', class: 'reveal' },
     { selector: '.equipment-service', class: 'reveal-scale' },
     { selector: '.players-section h2', class: 'reveal' },
-    { selector: '.team-text', class: 'reveal' },
+    { selector: '.team-header', class: 'reveal' },
+    { selector: '.team-cta-card', class: 'reveal-scale' },
   ];
 
   revealElements.forEach(({ selector, class: className }) => {
@@ -98,7 +99,8 @@ const initScrollReveal = () => {
     { selector: '.team-gallery img', delay: 0.1 },
     { selector: '.players-grid .player-card-flip', delay: 0.15 },
     { selector: '.partners-container .partner', delay: 0.05 },
-    { selector: '.equipment-list li', delay: 0.05 }
+    { selector: '.equipment-list li', delay: 0.05 },
+    { selector: '.team-cards .team-card', delay: 0.2 }
   ];
 
   staggerContainers.forEach(({ selector, delay }) => {
@@ -220,6 +222,30 @@ const initFlipCards = () => {
   });
 };
 
+// ===== 3D TILT CARDS =====
+const initTiltCards = () => {
+  const cards = document.querySelectorAll('[data-tilt]');
+
+  cards.forEach(card => {
+    const handleMouseMove = (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+      const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+      const rotateX = y * -5;
+      const rotateY = x * 5;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    };
+
+    const handleMouseLeave = () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+    };
+
+    card.addEventListener('mousemove', handleMouseMove);
+    card.addEventListener('mouseleave', handleMouseLeave);
+    card.style.transition = 'transform 0.15s ease-out';
+  });
+};
+
 // ===== INITIALIZE ALL =====
 document.addEventListener('DOMContentLoaded', () => {
   // Check for reduced motion preference
@@ -229,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initParallax();
     initHeaderReveal();
+    initTiltCards();
   }
 
   initSmoothScroll();

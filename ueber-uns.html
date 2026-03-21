@@ -36,29 +36,116 @@
         <p>Das Team hinter Grand Slam</p>
       </section>
 
-      <section class="team">
-        <div class="team-gallery">
-          <img src="/überuns1.png" alt="Das Team" />
-          <img src="/überuns2.png" alt="Das Team" />
-          <img src="/überuns3.png" alt="Das Team" />
-          <img src="/überuns4.png" alt="Das Team" />
+      <!-- Team Section - Card-based layout inspired by modern UI -->
+      <section class="team-section" aria-labelledby="team-heading">
+        <!-- Background decorative blurs -->
+        <div class="team-bg-decor" aria-hidden="true">
+          <div class="team-blob team-blob--1"></div>
+          <div class="team-blob team-blob--2"></div>
         </div>
 
-        <div class="team-text">
-          <div class="member-info">
-            <h2>Michael Lingner</h2>
-            <p class="member-title">Gründer & Inhaber</p>
-            <p>Michael Lingner gründete 1989 den Tennisshop GRAND SLAM. Er ist lizenzierter A-Trainer und Vereinsmanager des Deutschen Tennisbundes (DTB), Verbandstrainer und Mitglied im Lehrteam des Tennisverbandes Berlin-Brandenburg (TVBB: Referent für Materialkunde, Lehrpraxis und Didaktik / Methodik).</p>
-            <p>2007 wählte ihn der DTB, der Verband Deutscher Tennislehrer und die Deutsche Tenniszeitung zum <strong>Vereinstrainer des Jahres</strong>.</p>
-            <p>Als langjähriger Regionalligaspieler und aktiver Spieler der Meisterklasse (Herren 50) verfügt Michael Lingner über nachhaltige Wettkampferfahrung. Seit 2009 arbeitet er zusammen mit Barbara Ritter als Cheftrainer und Sportkoordinator für den Tennisverein BSV 1892.</p>
+        <div class="team-section-inner">
+          <!-- Section header with badge -->
+          <div class="team-header">
+            <span class="team-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg>
+              Unser Team
+            </span>
+            <h2 id="team-heading">Die Menschen hinter<br><span>Grand Slam</span></h2>
+            <p class="team-subtitle">Über 30 Jahre Erfahrung, Leidenschaft und Kompetenz für den Racketsport.</p>
           </div>
 
-          <div class="member-info">
-            <h2>Daniel Skolud</h2>
-            <p class="member-title">Racketspezialist</p>
-            <p>Daniel Skolud verfügt aufgrund seiner langjährigen Selbstständigkeit im Sportartikeleinzelhandel über umfangreiche Kenntnisse rund um den Tennissport. Gerade als Racketspezialist ist er für das Besaiten und Tunen Ihres Tennisschlägers prädestiniert.</p>
-            <p>So kümmert er sich u.a. um die Schläger verschiedener <strong>Spitzenspieler des DTB und TVBB</strong>.</p>
-            <p>Als aktiver Tennisspieler der Ostliga (Herren 40), langjähriger Fußball-Landesligaspieler und Marathonläufer kann er sich optimal in Ihre individuellen Wünsche und Bedürfnisse hineinversetzen.</p>
+          <!-- Photo gallery -->
+          <div class="team-gallery">
+            <img src="/überuns1.png" alt="Das Team bei der Arbeit" />
+            <img src="/überuns2.png" alt="Besaitungsservice" />
+            <img src="/überuns3.png" alt="Kundenberatung" />
+            <img src="/überuns4.png" alt="Unser Geschäft" />
+          </div>
+
+          <!-- Team member cards -->
+          <div class="team-cards">
+            <!-- Michael Lingner -->
+            <div class="team-card" data-tilt>
+              <div class="team-card__sparkle" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg>
+              </div>
+              <div class="team-card__gradient" aria-hidden="true"></div>
+              <div class="team-card__content">
+                <div class="team-card__avatar">
+                  <div class="team-card__avatar-ring" aria-hidden="true"></div>
+                  <img src="/überuns1.png" alt="Michael Lingner" />
+                </div>
+                <h3>Michael Lingner</h3>
+                <span class="team-card__role">Gründer & Inhaber</span>
+                <div class="team-card__location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Berlin-Britz
+                </div>
+                <p class="team-card__bio">Michael Lingner gründete 1989 den Tennisshop GRAND SLAM. Er ist lizenzierter A-Trainer und Vereinsmanager des Deutschen Tennisbundes (DTB), Verbandstrainer und Mitglied im Lehrteam des TVBB.</p>
+                <div class="team-card__skills">
+                  <span class="team-card__skill">DTB A-Trainer</span>
+                  <span class="team-card__skill">Vereinsmanager</span>
+                  <span class="team-card__skill">Meisterklasse</span>
+                </div>
+                <div class="team-card__highlights">
+                  <div class="team-card__highlight">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7 4 9 7 12 7s5-3 7.5-3a2.5 2.5 0 0 1 0 5H18"/><path d="M18 15h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M6 15H4.5a2.5 2.5 0 0 0 0 5H6"/><path d="m2 21 3.5-3.5"/><path d="m22 21-3.5-3.5"/><path d="M6 9v6"/><path d="M18 9v6"/><path d="M12 7v10"/></svg>
+                    <span>Vereinstrainer des Jahres 2007</span>
+                  </div>
+                  <div class="team-card__highlight">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                    <span>Cheftrainer BSV 1892 seit 2009</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Daniel Skolud -->
+            <div class="team-card" data-tilt>
+              <div class="team-card__sparkle" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg>
+              </div>
+              <div class="team-card__gradient" aria-hidden="true"></div>
+              <div class="team-card__content">
+                <div class="team-card__avatar">
+                  <div class="team-card__avatar-ring" aria-hidden="true"></div>
+                  <img src="/überuns3.png" alt="Daniel Skolud" />
+                </div>
+                <h3>Daniel Skolud</h3>
+                <span class="team-card__role">Racketspezialist</span>
+                <div class="team-card__location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Berlin-Britz
+                </div>
+                <p class="team-card__bio">Daniel Skolud verfügt aufgrund seiner langjährigen Selbstständigkeit im Sportartikeleinzelhandel über umfangreiche Kenntnisse rund um den Tennissport und ist als Racketspezialist prädestiniert.</p>
+                <div class="team-card__skills">
+                  <span class="team-card__skill">Besaitung</span>
+                  <span class="team-card__skill">Rackettuning</span>
+                  <span class="team-card__skill">Ostliga H40</span>
+                </div>
+                <div class="team-card__highlights">
+                  <div class="team-card__highlight">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                    <span>Betreut DTB & TVBB Spitzenspieler</span>
+                  </div>
+                  <div class="team-card__highlight">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                    <span>Aktiver Wettkampfsportler</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Card -->
+          <div class="team-cta-card">
+            <h3>Besuchen Sie uns</h3>
+            <p>Kommen Sie vorbei und lassen Sie sich von unserem Team individuell beraten.</p>
+            <a href="tel:03060610055" class="btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              030 / 606 10 55
+            </a>
           </div>
         </div>
       </section>
