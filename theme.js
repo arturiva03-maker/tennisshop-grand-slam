@@ -1,28 +1,28 @@
 // ============================================================
-// CENTRAL COLOR CONFIGURATION — Soft Lavender Theme
+// CENTRAL COLOR CONFIGURATION — Original Dark Luxury Gold Theme
 // Change these values to re-theme the entire site.
 // ============================================================
 
 const colors = {
-  primary:      '#8a79ab',
-  primaryMid:   '#ffffff',
-  primaryDark:  '#f8f7fa',
-  primaryLight: '#f1eff5',
-  accent:       '#e6a5b8',
-  accentLight:  '#dfd9ec',
-  accentDark:   '#d95c5c',
-  accentBg:     '#dcd9e3',
-  white:        '#ffffff',
-  bgLight:      '#f8f7fa',
-  bgDark:       '#1a1823',
-  text:         '#3d3c4f',
-  textMuted:    '#6b6880',
-  textSubtle:   '#a09aad',
-  border:       '#cec9d9',
-  success:      '#77b8a1',
-  successDark:  '#a0bbe3',
-  error:        '#d95c5c',
-  errorBg:      '#ffffff',
+  primary:      '#0b0b12',
+  primaryMid:   '#111118',
+  primaryDark:  '#060609',
+  primaryLight: '#151520',
+  accent:       '#c9a96e',
+  accentLight:  '#dbb978',
+  accentDark:   '#9a1050',
+  accentBg:     '#1c1915',
+  white:        '#f0ede8',
+  bgLight:      '#151520',
+  bgDark:       '#060609',
+  text:         '#f0ede8',
+  textMuted:    '#7a7a8a',
+  textSubtle:   '#5a5a6a',
+  border:       '#1f1c17',
+  success:      '#4ade80',
+  successDark:  '#22c55e',
+  error:        '#c4365a',
+  errorBg:      '#1f1218',
 };
 
 // --- Helper: hex → "r, g, b" string ---
@@ -35,88 +35,87 @@ function hexToRgb(hex) {
 
 // --- Build and inject <style> block with CSS custom properties ---
 function applyTheme(c) {
-  // ── :root (light theme) ──────────────────────────────────
+  // ── :root (dark luxury theme) ────────────────────────────
   const rootVars = `
-  --card: #ffffff;
-  --ring: #8a79ab;
-  --input: #eae7f0;
-  --muted: #dcd9e3;
-  --accent: #e6a5b8;
-  --border: #cec9d9;
-  --radius: 0.5rem;
-  --chart-1: #8a79ab;
-  --chart-2: #e6a5b8;
-  --chart-3: #77b8a1;
-  --chart-4: #f0c88d;
-  --chart-5: #a0bbe3;
-  --popover: #ffffff;
-  --primary: #8a79ab;
-  --sidebar: #f1eff5;
-  --spacing: 0.25rem;
-  --font-mono: "Fira Code", "Courier New", monospace;
-  --font-sans: Geist, sans-serif;
-  --secondary: #dfd9ec;
-  --background: #f8f7fa;
-  --font-serif: "Lora", Georgia, serif;
-  --foreground: #3d3c4f;
-  --destructive: #d95c5c;
-  --shadow-blur: 5px;
+  --card: #111118;
+  --ring: #c9a96e;
+  --input: #151520;
+  --muted: #1f1c17;
+  --accent: #c9a96e;
+  --border: #1f1c17;
+  --radius: 0.25rem;
+  --chart-1: #c9a96e;
+  --chart-2: #dbb978;
+  --chart-3: #c4365a;
+  --chart-4: #9a1050;
+  --chart-5: #7a7a8a;
+  --popover: #111118;
+  --primary: #0b0b12;
+  --sidebar: #060609;
+  --font-mono: monospace;
+  --font-sans: 'Sora', 'Helvetica Neue', sans-serif;
+  --secondary: #151520;
+  --background: #060609;
+  --font-serif: 'Bodoni Moda', 'Didot', 'Georgia', serif;
+  --foreground: #f0ede8;
+  --destructive: #c4365a;
+  --shadow-blur: 4px;
   --shadow-color: hsl(0 0% 0%);
-  --sidebar-ring: #8a79ab;
-  --shadow-spread: 1px;
+  --sidebar-ring: #c9a96e;
+  --shadow-spread: 0px;
   --letter-spacing: 0em;
-  --shadow-opacity: 0.06;
-  --sidebar-accent: #e6a5b8;
-  --sidebar-border: #d7d2e0;
-  --card-foreground: #3d3c4f;
-  --shadow-offset-x: 1px;
+  --shadow-opacity: 0.15;
+  --sidebar-accent: #c9a96e;
+  --sidebar-border: #1f1c17;
+  --card-foreground: #f0ede8;
+  --shadow-offset-x: 0px;
   --shadow-offset-y: 2px;
-  --sidebar-primary: #8a79ab;
-  --muted-foreground: #6b6880;
-  --accent-foreground: #4b2e36;
-  --popover-foreground: #3d3c4f;
-  --primary-foreground: #f8f7fa;
-  --sidebar-foreground: #3d3c4f;
-  --secondary-foreground: #3d3c4f;
-  --destructive-foreground: #f8f7fa;
-  --sidebar-accent-foreground: #4b2e36;
-  --sidebar-primary-foreground: #f8f7fa;
+  --sidebar-primary: #c9a96e;
+  --muted-foreground: #7a7a8a;
+  --accent-foreground: #060609;
+  --popover-foreground: #f0ede8;
+  --primary-foreground: #f0ede8;
+  --sidebar-foreground: #f0ede8;
+  --secondary-foreground: #f0ede8;
+  --destructive-foreground: #f0ede8;
+  --sidebar-accent-foreground: #060609;
+  --sidebar-primary-foreground: #060609;
 `;
 
-  // ── .dark theme ──────────────────────────────────────────
+  // ── .dark theme (same as default — site is dark by nature) ──
   const darkVars = `
-  --card: #232030;
-  --ring: #a995c9;
-  --input: #2a273a;
-  --muted: #242031;
-  --accent: #372e3f;
-  --border: #302c40;
-  --chart-1: #a995c9;
-  --chart-2: #f2b8c6;
-  --chart-3: #77b8a1;
-  --chart-4: #f0c88d;
-  --chart-5: #a0bbe3;
-  --popover: #232030;
-  --primary: #a995c9;
-  --sidebar: #16141e;
-  --secondary: #5a5370;
-  --background: #1a1823;
-  --foreground: #e0ddef;
-  --destructive: #e57373;
-  --sidebar-ring: #a995c9;
-  --sidebar-accent: #372e3f;
-  --sidebar-border: #2a273a;
-  --card-foreground: #e0ddef;
-  --sidebar-primary: #a995c9;
-  --muted-foreground: #a09aad;
-  --accent-foreground: #f2b8c6;
-  --popover-foreground: #e0ddef;
-  --primary-foreground: #1a1823;
-  --sidebar-foreground: #e0ddef;
-  --secondary-foreground: #e0ddef;
-  --destructive-foreground: #1a1823;
-  --sidebar-accent-foreground: #f2b8c6;
-  --sidebar-primary-foreground: #1a1823;
+  --card: #111118;
+  --ring: #c9a96e;
+  --input: #151520;
+  --muted: #1f1c17;
+  --accent: #c9a96e;
+  --border: #1f1c17;
+  --chart-1: #c9a96e;
+  --chart-2: #dbb978;
+  --chart-3: #c4365a;
+  --chart-4: #9a1050;
+  --chart-5: #7a7a8a;
+  --popover: #111118;
+  --primary: #0b0b12;
+  --sidebar: #060609;
+  --secondary: #151520;
+  --background: #060609;
+  --foreground: #f0ede8;
+  --destructive: #c4365a;
+  --sidebar-ring: #c9a96e;
+  --sidebar-accent: #c9a96e;
+  --sidebar-border: #1f1c17;
+  --card-foreground: #f0ede8;
+  --sidebar-primary: #c9a96e;
+  --muted-foreground: #7a7a8a;
+  --accent-foreground: #060609;
+  --popover-foreground: #f0ede8;
+  --primary-foreground: #f0ede8;
+  --sidebar-foreground: #f0ede8;
+  --secondary-foreground: #f0ede8;
+  --destructive-foreground: #f0ede8;
+  --sidebar-accent-foreground: #060609;
+  --sidebar-primary-foreground: #060609;
 `;
 
   // ── Legacy + RGB aliases (for existing CSS rgba() references) ──
