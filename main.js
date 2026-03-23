@@ -1,4 +1,5 @@
 // Grand Slam Tennisshop
+import { colors } from './theme.js';
 
 // Sidebar Toggle
 const sidebarToggle = document.getElementById('sidebarToggle');
@@ -178,11 +179,11 @@ const initHeaderReveal = () => {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     if (scrollY > 100) {
-      header.style.background = 'rgba(6, 6, 9, 0.95)';
+      header.style.background = 'rgba(var(--primary-dark-rgb), 0.95)';
       header.style.backdropFilter = 'blur(12px)';
-      header.style.borderBottom = '1px solid rgba(201, 169, 110, 0.08)';
+      header.style.borderBottom = '1px solid rgba(var(--accent-rgb), 0.08)';
     } else {
-      header.style.background = 'linear-gradient(to bottom, rgba(6,6,9,0.92), transparent)';
+      header.style.background = 'linear-gradient(to bottom, rgba(var(--primary-dark-rgb), 0.92), transparent)';
       header.style.backdropFilter = 'none';
       header.style.borderBottom = 'none';
     }
