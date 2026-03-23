@@ -1,28 +1,28 @@
 // ============================================================
-// CENTRAL COLOR CONFIGURATION — Minimal Violet Theme
+// CENTRAL COLOR CONFIGURATION — Soft Lavender Theme
 // Change these values to re-theme the entire site.
 // ============================================================
 
 const colors = {
-  primary:      '#7033ff',
-  primaryMid:   '#fdfdfd',
-  primaryDark:  '#fdfdfd',
-  primaryLight: '#f5f8fb',
-  accent:       '#e2ebff',
-  accentLight:  '#edf0f4',
-  accentDark:   '#e54b4f',
-  accentBg:     '#f5f5f5',
+  primary:      '#8a79ab',
+  primaryMid:   '#ffffff',
+  primaryDark:  '#f8f7fa',
+  primaryLight: '#f1eff5',
+  accent:       '#e6a5b8',
+  accentLight:  '#dfd9ec',
+  accentDark:   '#d95c5c',
+  accentBg:     '#dcd9e3',
   white:        '#ffffff',
-  bgLight:      '#fdfdfd',
-  bgDark:       '#1a1b1e',
-  text:         '#000000',
-  textMuted:    '#525252',
-  textSubtle:   '#a0a0a0',
-  border:       '#e7e7ee',
-  success:      '#4ac885',
-  successDark:  '#3276e4',
-  error:        '#e54b4f',
-  errorBg:      '#fdfdfd',
+  bgLight:      '#f8f7fa',
+  bgDark:       '#1a1823',
+  text:         '#3d3c4f',
+  textMuted:    '#6b6880',
+  textSubtle:   '#a09aad',
+  border:       '#cec9d9',
+  success:      '#77b8a1',
+  successDark:  '#a0bbe3',
+  error:        '#d95c5c',
+  errorBg:      '#ffffff',
 };
 
 // --- Helper: hex → "r, g, b" string ---
@@ -37,98 +37,86 @@ function hexToRgb(hex) {
 function applyTheme(c) {
   // ── :root (light theme) ──────────────────────────────────
   const rootVars = `
-  --card: #fdfdfd;
-  --ring: #000000;
-  --input: #ebebeb;
-  --muted: #f5f5f5;
-  --accent: #e2ebff;
-  --border: #e7e7ee;
-  --radius: 1.4rem;
-  --chart-1: #4ac885;
-  --chart-2: #7033ff;
-  --chart-3: #fd822b;
-  --chart-4: #3276e4;
-  --chart-5: #747474;
-  --popover: #fcfcfc;
-  --primary: #7033ff;
-  --sidebar: #f5f8fb;
-  --spacing: 0.27rem;
-  --font-mono: IBM Plex Mono, monospace;
-  --font-sans: Plus Jakarta Sans, sans-serif;
-  --secondary: #edf0f4;
-  --background: #fdfdfd;
-  --font-serif: Lora, serif;
-  --foreground: #000000;
-  --destructive: #e54b4f;
-  --shadow-blur: 3px;
+  --card: #ffffff;
+  --ring: #8a79ab;
+  --input: #eae7f0;
+  --muted: #dcd9e3;
+  --accent: #e6a5b8;
+  --border: #cec9d9;
+  --radius: 0.5rem;
+  --chart-1: #8a79ab;
+  --chart-2: #e6a5b8;
+  --chart-3: #77b8a1;
+  --chart-4: #f0c88d;
+  --chart-5: #a0bbe3;
+  --popover: #ffffff;
+  --primary: #8a79ab;
+  --sidebar: #f1eff5;
+  --spacing: 0.25rem;
+  --font-mono: "Fira Code", "Courier New", monospace;
+  --font-sans: Geist, sans-serif;
+  --secondary: #dfd9ec;
+  --background: #f8f7fa;
+  --font-serif: "Lora", Georgia, serif;
+  --foreground: #3d3c4f;
+  --destructive: #d95c5c;
+  --shadow-blur: 5px;
   --shadow-color: hsl(0 0% 0%);
-  --sidebar-ring: #000000;
-  --shadow-spread: 0px;
-  --letter-spacing: -0.025em;
-  --shadow-opacity: 0.16;
-  --sidebar-accent: #ebebeb;
-  --sidebar-border: #ebebeb;
-  --card-foreground: #000000;
-  --shadow-offset-x: 0px;
+  --sidebar-ring: #8a79ab;
+  --shadow-spread: 1px;
+  --letter-spacing: 0em;
+  --shadow-opacity: 0.06;
+  --sidebar-accent: #e6a5b8;
+  --sidebar-border: #d7d2e0;
+  --card-foreground: #3d3c4f;
+  --shadow-offset-x: 1px;
   --shadow-offset-y: 2px;
-  --sidebar-primary: #000000;
-  --muted-foreground: #525252;
-  --accent-foreground: #1e69dc;
-  --popover-foreground: #000000;
-  --primary-foreground: #ffffff;
-  --sidebar-foreground: #000000;
-  --secondary-foreground: #080808;
-  --destructive-foreground: #ffffff;
-  --sidebar-accent-foreground: #000000;
-  --sidebar-primary-foreground: #ffffff;
+  --sidebar-primary: #8a79ab;
+  --muted-foreground: #6b6880;
+  --accent-foreground: #4b2e36;
+  --popover-foreground: #3d3c4f;
+  --primary-foreground: #f8f7fa;
+  --sidebar-foreground: #3d3c4f;
+  --secondary-foreground: #3d3c4f;
+  --destructive-foreground: #f8f7fa;
+  --sidebar-accent-foreground: #4b2e36;
+  --sidebar-primary-foreground: #f8f7fa;
 `;
 
   // ── .dark theme ──────────────────────────────────────────
   const darkVars = `
-  --card: #222327;
-  --ring: #8c5cff;
-  --input: #33353a;
-  --muted: #2a2c33;
-  --accent: #1e293b;
-  --border: #33353a;
-  --radius: 1.4rem;
-  --chart-1: #4ade80;
-  --chart-2: #8c5cff;
-  --chart-3: #fca5a5;
-  --chart-4: #5993f4;
-  --chart-5: #a0a0a0;
-  --popover: #222327;
-  --primary: #8c5cff;
-  --sidebar: #161618;
-  --spacing: 0.27rem;
-  --font-mono: IBM Plex Mono, monospace;
-  --font-sans: Plus Jakarta Sans, sans-serif;
-  --secondary: #2a2c33;
-  --background: #1a1b1e;
-  --font-serif: Lora, serif;
-  --foreground: #f0f0f0;
-  --destructive: #f87171;
-  --shadow-blur: 3px;
-  --shadow-color: hsl(0 0% 0%);
-  --sidebar-ring: #8c5cff;
-  --shadow-spread: 0px;
-  --letter-spacing: -0.025em;
-  --shadow-opacity: 0.16;
-  --sidebar-accent: #2a2c33;
-  --sidebar-border: #33353a;
-  --card-foreground: #f0f0f0;
-  --shadow-offset-x: 0px;
-  --shadow-offset-y: 2px;
-  --sidebar-primary: #8c5cff;
-  --muted-foreground: #a0a0a0;
-  --accent-foreground: #79c0ff;
-  --popover-foreground: #f0f0f0;
-  --primary-foreground: #ffffff;
-  --sidebar-foreground: #f0f0f0;
-  --secondary-foreground: #f0f0f0;
-  --destructive-foreground: #ffffff;
-  --sidebar-accent-foreground: #8c5cff;
-  --sidebar-primary-foreground: #ffffff;
+  --card: #232030;
+  --ring: #a995c9;
+  --input: #2a273a;
+  --muted: #242031;
+  --accent: #372e3f;
+  --border: #302c40;
+  --chart-1: #a995c9;
+  --chart-2: #f2b8c6;
+  --chart-3: #77b8a1;
+  --chart-4: #f0c88d;
+  --chart-5: #a0bbe3;
+  --popover: #232030;
+  --primary: #a995c9;
+  --sidebar: #16141e;
+  --secondary: #5a5370;
+  --background: #1a1823;
+  --foreground: #e0ddef;
+  --destructive: #e57373;
+  --sidebar-ring: #a995c9;
+  --sidebar-accent: #372e3f;
+  --sidebar-border: #2a273a;
+  --card-foreground: #e0ddef;
+  --sidebar-primary: #a995c9;
+  --muted-foreground: #a09aad;
+  --accent-foreground: #f2b8c6;
+  --popover-foreground: #e0ddef;
+  --primary-foreground: #1a1823;
+  --sidebar-foreground: #e0ddef;
+  --secondary-foreground: #e0ddef;
+  --destructive-foreground: #1a1823;
+  --sidebar-accent-foreground: #f2b8c6;
+  --sidebar-primary-foreground: #1a1823;
 `;
 
   // ── Legacy + RGB aliases (for existing CSS rgba() references) ──

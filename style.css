@@ -254,7 +254,7 @@ button:focus-visible {
   font-size: clamp(0.9rem, 1.5vw, 1.2rem);
   text-transform: uppercase;
   letter-spacing: 5px;
-  color: white;
+  color: var(--primary-foreground);
 }
 
 @keyframes revealLine {
