@@ -1,28 +1,28 @@
 // ============================================================
-// CENTRAL COLOR CONFIGURATION — Solarized Theme
+// CENTRAL COLOR CONFIGURATION — Minimal Violet Theme
 // Change these values to re-theme the entire site.
 // ============================================================
 
 const colors = {
-  primary:      '#d33682',
-  primaryMid:   '#eee8d5',
-  primaryDark:  '#fdf6e3',
-  primaryLight: '#fdf6e3',
-  accent:       '#cb4b16',
-  accentLight:  '#2aa198',
-  accentDark:   '#dc322f',
-  accentBg:     '#eee8d5',
+  primary:      '#7033ff',
+  primaryMid:   '#fdfdfd',
+  primaryDark:  '#fdfdfd',
+  primaryLight: '#f5f8fb',
+  accent:       '#e2ebff',
+  accentLight:  '#edf0f4',
+  accentDark:   '#e54b4f',
+  accentBg:     '#f5f5f5',
   white:        '#ffffff',
-  bgLight:      '#fdf6e3',
-  bgDark:       '#002b36',
-  text:         '#073642',
-  textMuted:    '#93a1a1',
-  textSubtle:   '#839496',
-  border:       '#839496',
-  success:      '#2aa198',
-  successDark:  '#268bd2',
-  error:        '#dc322f',
-  errorBg:      '#eee8d5',
+  bgLight:      '#fdfdfd',
+  bgDark:       '#1a1b1e',
+  text:         '#000000',
+  textMuted:    '#525252',
+  textSubtle:   '#a0a0a0',
+  border:       '#e7e7ee',
+  success:      '#4ac885',
+  successDark:  '#3276e4',
+  error:        '#e54b4f',
+  errorBg:      '#fdfdfd',
 };
 
 // --- Helper: hex → "r, g, b" string ---
@@ -37,83 +37,97 @@ function hexToRgb(hex) {
 function applyTheme(c) {
   // ── :root (light theme) ──────────────────────────────────
   const rootVars = `
-  --card: #eee8d5;
-  --ring: #d33682;
-  --input: #839496;
-  --muted: #93a1a1;
-  --accent: #cb4b16;
-  --border: #839496;
-  --radius: 0.25rem;
-  --chart-1: #268bd2;
-  --chart-2: #2aa198;
-  --chart-3: #d33682;
-  --chart-4: #cb4b16;
-  --chart-5: #dc322f;
-  --popover: #eee8d5;
-  --primary: #d33682;
-  --sidebar: #fdf6e3;
-  --font-mono: Space Mono, monospace;
-  --font-sans: Outfit, sans-serif;
-  --secondary: #2aa198;
-  --background: #fdf6e3;
-  --foreground: #073642;
-  --destructive: #dc322f;
-  --shadow-blur: 4px;
-  --shadow-color: hsl(196 83% 10%);
-  --sidebar-ring: #d33682;
+  --card: #fdfdfd;
+  --ring: #000000;
+  --input: #ebebeb;
+  --muted: #f5f5f5;
+  --accent: #e2ebff;
+  --border: #e7e7ee;
+  --radius: 1.4rem;
+  --chart-1: #4ac885;
+  --chart-2: #7033ff;
+  --chart-3: #fd822b;
+  --chart-4: #3276e4;
+  --chart-5: #747474;
+  --popover: #fcfcfc;
+  --primary: #7033ff;
+  --sidebar: #f5f8fb;
+  --spacing: 0.27rem;
+  --font-mono: IBM Plex Mono, monospace;
+  --font-sans: Plus Jakarta Sans, sans-serif;
+  --secondary: #edf0f4;
+  --background: #fdfdfd;
+  --font-serif: Lora, serif;
+  --foreground: #000000;
+  --destructive: #e54b4f;
+  --shadow-blur: 3px;
+  --shadow-color: hsl(0 0% 0%);
+  --sidebar-ring: #000000;
   --shadow-spread: 0px;
-  --shadow-opacity: 0.15;
-  --sidebar-accent: #2aa198;
-  --sidebar-border: #839496;
-  --card-foreground: #073642;
-  --shadow-offset-x: 2px;
+  --letter-spacing: -0.025em;
+  --shadow-opacity: 0.16;
+  --sidebar-accent: #ebebeb;
+  --sidebar-border: #ebebeb;
+  --card-foreground: #000000;
+  --shadow-offset-x: 0px;
   --shadow-offset-y: 2px;
-  --sidebar-primary: #d33682;
-  --muted-foreground: #073642;
-  --accent-foreground: #ffffff;
-  --popover-foreground: #073642;
+  --sidebar-primary: #000000;
+  --muted-foreground: #525252;
+  --accent-foreground: #1e69dc;
+  --popover-foreground: #000000;
   --primary-foreground: #ffffff;
-  --sidebar-foreground: #073642;
-  --secondary-foreground: #ffffff;
+  --sidebar-foreground: #000000;
+  --secondary-foreground: #080808;
   --destructive-foreground: #ffffff;
-  --sidebar-accent-foreground: #ffffff;
+  --sidebar-accent-foreground: #000000;
   --sidebar-primary-foreground: #ffffff;
 `;
 
   // ── .dark theme ──────────────────────────────────────────
   const darkVars = `
-  --card: #073642;
-  --ring: #d33682;
-  --input: #586e75;
-  --muted: #586e75;
-  --accent: #cb4b16;
-  --border: #586e75;
-  --radius: 0.25rem;
-  --chart-1: #268bd2;
-  --chart-2: #2aa198;
-  --chart-3: #d33682;
-  --chart-4: #cb4b16;
-  --chart-5: #dc322f;
-  --popover: #073642;
-  --primary: #d33682;
-  --sidebar: #002b36;
-  --secondary: #2aa198;
-  --background: #002b36;
-  --foreground: #93a1a1;
-  --destructive: #dc322f;
-  --sidebar-ring: #d33682;
-  --sidebar-accent: #2aa198;
-  --sidebar-border: #586e75;
-  --card-foreground: #93a1a1;
-  --sidebar-primary: #d33682;
-  --muted-foreground: #93a1a1;
-  --accent-foreground: #ffffff;
-  --popover-foreground: #93a1a1;
+  --card: #222327;
+  --ring: #8c5cff;
+  --input: #33353a;
+  --muted: #2a2c33;
+  --accent: #1e293b;
+  --border: #33353a;
+  --radius: 1.4rem;
+  --chart-1: #4ade80;
+  --chart-2: #8c5cff;
+  --chart-3: #fca5a5;
+  --chart-4: #5993f4;
+  --chart-5: #a0a0a0;
+  --popover: #222327;
+  --primary: #8c5cff;
+  --sidebar: #161618;
+  --spacing: 0.27rem;
+  --font-mono: IBM Plex Mono, monospace;
+  --font-sans: Plus Jakarta Sans, sans-serif;
+  --secondary: #2a2c33;
+  --background: #1a1b1e;
+  --font-serif: Lora, serif;
+  --foreground: #f0f0f0;
+  --destructive: #f87171;
+  --shadow-blur: 3px;
+  --shadow-color: hsl(0 0% 0%);
+  --sidebar-ring: #8c5cff;
+  --shadow-spread: 0px;
+  --letter-spacing: -0.025em;
+  --shadow-opacity: 0.16;
+  --sidebar-accent: #2a2c33;
+  --sidebar-border: #33353a;
+  --card-foreground: #f0f0f0;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 2px;
+  --sidebar-primary: #8c5cff;
+  --muted-foreground: #a0a0a0;
+  --accent-foreground: #79c0ff;
+  --popover-foreground: #f0f0f0;
   --primary-foreground: #ffffff;
-  --sidebar-foreground: #93a1a1;
-  --secondary-foreground: #ffffff;
+  --sidebar-foreground: #f0f0f0;
+  --secondary-foreground: #f0f0f0;
   --destructive-foreground: #ffffff;
-  --sidebar-accent-foreground: #ffffff;
+  --sidebar-accent-foreground: #8c5cff;
   --sidebar-primary-foreground: #ffffff;
 `;
 
