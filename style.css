@@ -271,6 +271,7 @@ button:focus-visible {
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 4px;
+  text-wrap: balance;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 1s var(--ease-out) 0.3s forwards;
@@ -363,6 +364,12 @@ button:focus-visible {
   color: var(--dark);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.25);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: none;
+  transition-duration: 50ms;
 }
 
 /* ===== DIAGONAL DIVIDER ===== */
@@ -550,6 +557,7 @@ button:focus-visible {
   margin-bottom: 2rem;
   font-weight: 400;
   letter-spacing: 1px;
+  text-wrap: balance;
 }
 
 .welcome-text p {
@@ -583,7 +591,7 @@ button:focus-visible {
 /* ===== PARTNERS SECTION ===== */
 .partners {
   padding: 4rem 2rem;
-  background: var(--light);
+  background: var(--primary-mid);
   position: relative;
 }
 
@@ -618,13 +626,13 @@ button:focus-visible {
 .partner img {
   height: 80px;
   width: auto;
-  filter: grayscale(30%);
+  filter: grayscale(20%) brightness(1.08);
   transition: all var(--duration-mid) ease;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .partner img:hover {
-  filter: grayscale(0%);
+  filter: grayscale(0%) brightness(1.15);
   opacity: 1;
 }
 
@@ -683,6 +691,7 @@ button:focus-visible {
   text-transform: uppercase;
   letter-spacing: 8px;
   color: var(--accent);
+  text-wrap: balance;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s var(--ease-out) 0.2s forwards;
@@ -788,6 +797,7 @@ button:focus-visible {
   line-height: 1.15;
   color: var(--light);
   margin-bottom: 1.25rem;
+  text-wrap: balance;
 }
 
 .team-header h2 span {
@@ -1061,6 +1071,16 @@ button:focus-visible {
 }
 
 /* ===== SERVICE SECTION ===== */
+.service-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--accent);
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
+
 .service-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -1105,6 +1125,7 @@ button:focus-visible {
   background: var(--primary);
   padding: 5rem 2rem;
   position: relative;
+  text-align: center;
 }
 
 .players-section::before {
